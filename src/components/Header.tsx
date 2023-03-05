@@ -26,7 +26,7 @@ function HeaderNavWrapper({ children }: PropsWithChildren) {
       <button
         className='lg:hidden'
         aria-controls='navigation'
-        aria-expanded='false'
+        aria-expanded={showMenu}
         type='button'
         onClick={handleOpenMenu}
       >
