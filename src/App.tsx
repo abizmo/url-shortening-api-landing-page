@@ -14,26 +14,23 @@ function App(): JSX.Element {
         <Header.NavWrapper>
           <Header.Nav ariaLabel='Actions'>
             <Header.NavItem>
-              <Link to='/login'>Login</Link>
+              <Link href='/login'>Login</Link>
             </Header.NavItem>
             <Header.NavItem>
-              <a
-                href='/sign-up'
-                className='block py-4 bg-primary-cyan text-neutral-white rounded-full px-8 lg:hover:bg-opacity-70'
-              >
+              <Link href='/sign-up' variant='primary'>
                 Sign Up
-              </a>
+              </Link>
             </Header.NavItem>
           </Header.Nav>
           <Header.Nav ariaLabel='Sections'>
             <Header.NavItem>
-              <Link to='/features'>Features</Link>
+              <Link href='/features'>Features</Link>
             </Header.NavItem>
             <Header.NavItem>
-              <Link to='/pricing'>Pricing</Link>
+              <Link href='/pricing'>Pricing</Link>
             </Header.NavItem>
             <Header.NavItem>
-              <Link to='/resources'>Resources</Link>
+              <Link href='/resources'>Resources</Link>
             </Header.NavItem>
           </Header.Nav>
         </Header.NavWrapper>
