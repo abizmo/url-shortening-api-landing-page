@@ -1,5 +1,7 @@
 import { PropsWithChildren, useState } from 'react';
 
+import useMediaQuery from '../hooks/useMediaQuery';
+
 function Header({ children }: PropsWithChildren): JSX.Element {
   return (
     <header className='py-10 lg:py-12'>
@@ -16,38 +18,51 @@ function HeaderLogo({ children }: PropsWithChildren) {
   return <a href='/'>{children}</a>;
 }
 
+Header.Logo = HeaderLogo;
+
 function HeaderNavWrapper({ children }: PropsWithChildren) {
   const [showMenu, setShowMenu] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const handleOpenMenu = () => setShowMenu((prev) => !prev);
 
   return (
     <>
-      <button
-        className='lg:hidden'
-        aria-controls='navigation'
-        aria-expanded={showMenu}
-        type='button'
-        onClick={handleOpenMenu}
-      >
-        <div className='grid gap-2 w-8 h-6 grid-rows-3'>
-          <div className='w-8 bg-neutral-grayish-violet' />
-          <div className='w-8 bg-neutral-grayish-violet' />
-          <div className='w-8 bg-neutral-grayish-violet' />
-        </div>
-        <span className='sr-only'>Menu</span>
-      </button>
-      <nav
-        className={`${
-          showMenu ? 'flex' : 'hidden'
-        } absolute top-full bg-primary-violet inset-x-0 mt-6 px-6 flex-col-reverse divide-y divide-y-reverse divide-neutral-white divide-opacity-40 text-neutral-white rounded-lg lg:flex-1 lg:flex lg:justify-between lg:flex-row-reverse lg:items-center lg:bg-neutral-white lg:text-neutral-grayish-violet lg:static lg:mt-0 lg:px-0`}
-        id='navigation'
-      >
-        {children}
-      </nav>
+      {isDesktop ? (
+        <nav
+          className='flex-1 flex justify-between flex-row-reverse items-center text-neutral-grayish-violet'
+          id='navigation'
+        >
+          {children}
+        </nav>
+      ) : (
+        <button
+          aria-controls='navigation'
+          aria-expanded={showMenu}
+          type='button'
+          onClick={handleOpenMenu}
+        >
+          <div className='grid gap-2 w-8 h-6 grid-rows-3'>
+            <div className='w-8 bg-neutral-grayish-violet' />
+            <div className='w-8 bg-neutral-grayish-violet' />
+            <div className='w-8 bg-neutral-grayish-violet' />
+          </div>
+          <span className='sr-only'>Menu</span>
+        </button>
+      )}
+      {!isDesktop && showMenu && (
+        <nav
+          className='flex absolute top-full bg-primary-violet inset-x-0 mt-6 px-6 flex-col-reverse divide-y divide-y-reverse divide-neutral-white divide-opacity-40 text-neutral-white rounded-lg'
+          id='navigation'
+        >
+          {children}
+        </nav>
+      )}
     </>
   );
 }
+
+Header.NavWrapper = HeaderNavWrapper;
 
 interface HeaderNavProps {
   ariaLabel: string;
@@ -64,12 +79,12 @@ function HeaderNav({ ariaLabel, children }: PropsWithChildren<HeaderNavProps>) {
   );
 }
 
+Header.Nav = HeaderNav;
+
 function HeaderNavItem({ children }: PropsWithChildren) {
   return <li>{children}</li>;
 }
-Header.Logo = HeaderLogo;
-Header.Nav = HeaderNav;
+
 Header.NavItem = HeaderNavItem;
-Header.NavWrapper = HeaderNavWrapper;
 
 export default Header;
