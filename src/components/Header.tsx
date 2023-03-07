@@ -82,7 +82,7 @@ function HeaderNav({ ariaLabel, children }: PropsWithChildren<HeaderNavProps>) {
 Header.Nav = HeaderNav;
 
 function HeaderNavItem({ children }: PropsWithChildren) {
-  return <li>{children}</li>;
+  return <li className='[&>*]:mx-auto'>{children}</li>;
 }
 
 Header.NavItem = HeaderNavItem;

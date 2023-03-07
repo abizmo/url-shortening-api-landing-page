@@ -18,7 +18,7 @@ function App(): JSX.Element {
               <Link href='/login'>Login</Link>
             </Header.NavItem>
             <Header.NavItem>
-              <Link href='/sign-up' variant='primary'>
+              <Link href='/sign-up' variant='primary' size='full'>
                 Sign Up
               </Link>
             </Header.NavItem>
@@ -55,7 +55,7 @@ function App(): JSX.Element {
               your links are performing.
             </p>
             {/* TODO: fix link size */}
-            <Link href='/sign-up' variant='primary'>
+            <Link href='/sign-up' variant='primary' className='mx-auto lg:mx-0'>
               Get Started
             </Link>
           </div>
