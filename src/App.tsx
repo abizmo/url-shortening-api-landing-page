@@ -37,7 +37,6 @@ function App(): JSX.Element {
         </Header.NavWrapper>
       </Header>
       <main>
-        {/* TODO: fix font color */}
         <section className='grid gap-9 lg:grid-cols-2 lg:items-center lg:container lg:mx-auto'>
           <div className='overflow-hidden lg:col-start-2'>
             {/* TODO: fix image position */}
@@ -48,10 +47,10 @@ function App(): JSX.Element {
             />
           </div>
           <div className='text-center px-6 lg:col-start-1 lg:row-start-1 lg:text-left'>
-            <h1 className='font-bold text-4xl tracking-tight mb-3 lg:text-7xl lg:tracking-tighter'>
+            <h1 className='text-neutral-dark-violet font-bold text-4xl tracking-tight mb-3 lg:text-7xl lg:tracking-tighter'>
               More than just shorter links
             </h1>
-            <p className='mb-8 lg:text-2xl lg:tracking-tighter lg:max-w-lg lg:mb-9'>
+            <p className='text-neutral-grayish-violet mb-8 lg:text-2xl lg:tracking-tighter lg:max-w-lg lg:mb-9'>
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </p>
