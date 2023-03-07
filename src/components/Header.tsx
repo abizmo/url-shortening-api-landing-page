@@ -72,7 +72,7 @@ function HeaderNav({ ariaLabel, children }: PropsWithChildren<HeaderNavProps>) {
   return (
     <ul
       aria-label={ariaLabel}
-      className='grid gap-4 py-8 text-center font-bold lg:flex lg:gap-10 lg:items-center'
+      className='grid gap-4 py-8 lg:flex lg:gap-10 lg:items-center'
     >
       {children}
     </ul>

@@ -1,7 +1,7 @@
 import { LinkHTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-const link = cva('block', {
+const link = cva('block text-center font-bold', {
   variants: {
     variant: {
       text: 'py-2 lg:hover:text-neutral-dark-violet',
