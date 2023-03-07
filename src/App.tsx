@@ -54,7 +54,6 @@ function App(): JSX.Element {
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </p>
-            {/* TODO: fix link size */}
             <Link href='/sign-up' variant='primary' className='mx-auto lg:mx-0'>
               Get Started
             </Link>
