@@ -1,7 +1,6 @@
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Link from './components/Link';
-import Illustration from './assets/images/illustration-working.svg';
 
 function App(): JSX.Element {
   return (
@@ -37,16 +36,11 @@ function App(): JSX.Element {
         </Header.NavWrapper>
       </Header>
       <main>
-        <section className='grid gap-9 lg:grid-cols-2 lg:items-center lg:container lg:mx-auto'>
-          <div className='overflow-hidden lg:col-start-2'>
-            {/* TODO: fix image position */}
-            <img
-              src={Illustration}
-              alt='working'
-              className='ml-6 h-[300px] max-w-none lg:h-[480px] lg:ml-12'
-            />
-          </div>
-          <div className='text-center px-6 lg:col-start-1 lg:row-start-1 lg:text-left'>
+        <section className='grid gap-9 lg:grid-cols-[1fr_repeat(2,_640px)_1fr] lg:items-center lg:gap-0'>
+          {/* TODO: Insert arbitrary values in the theme */}
+          <div className='bg-[url("images/illustration-working.svg")] bg-no-repeat bg-[length:125vw] bg-[7vw] h-[90vw] lg:bg-[length:auto_100%] lg:bg-[-90%] lg:h-[36.5vw] lg:col-start-3 lg:col-end-5' />
+          <div className='text-center pl-6 lg:col-start-2 lg:row-start-1 lg:text-left'>
+            {/* TODO: config fonts size in theme */}
             <h1 className='text-neutral-dark-violet font-bold text-4xl tracking-tight mb-3 lg:text-7xl lg:tracking-tighter'>
               More than just shorter links
             </h1>
