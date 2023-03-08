@@ -15,7 +15,19 @@ module.exports = {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
     },
+    screens: {
+      lg: '1158px',
+    },
     extend: {
+      backgroundImage: {
+        hero: 'url("images/illustration-working.svg")',
+      },
+      backgroundSize: {
+        'hero-size': 'auto 100%',
+      },
+      gridTemplateColumns: {
+        '2-center': '1fr repeat(2, 579px) 1fr',
+      },
       spacing: {
         30: '7.5rem',
       },

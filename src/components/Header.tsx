@@ -22,7 +22,7 @@ Header.Logo = HeaderLogo;
 
 function HeaderNavWrapper({ children }: PropsWithChildren) {
   const [showMenu, setShowMenu] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isDesktop = useMediaQuery('(min-width: 1158px');
 
   const handleOpenMenu = () => setShowMenu((prev) => !prev);
 
