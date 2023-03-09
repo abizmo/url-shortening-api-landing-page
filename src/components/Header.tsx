@@ -1,6 +1,10 @@
 import { PropsWithChildren, useState } from 'react';
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from 'tailwind-config';
 
 import useMediaQuery from '../hooks/useMediaQuery';
+
+const { theme } = resolveConfig(tailwindConfig);
 
 function Header({ children }: PropsWithChildren): JSX.Element {
   return (
@@ -22,7 +26,7 @@ Header.Logo = HeaderLogo;
 
 function HeaderNavWrapper({ children }: PropsWithChildren) {
   const [showMenu, setShowMenu] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1158px');
+  const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
   const handleOpenMenu = () => setShowMenu((prev) => !prev);
 
