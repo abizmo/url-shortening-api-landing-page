@@ -2,6 +2,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Link from './components/Link';
 import './App.css';
+import Title from './components/Title';
+import Paragraph from './components/Paragraph';
 
 function App(): JSX.Element {
   return (
@@ -37,16 +39,14 @@ function App(): JSX.Element {
         </Header.NavWrapper>
       </Header>
       <main>
-        <section className='grid gap-9 lg:grid-cols-2-center lg:items-center lg:gap-0'>
+        <section className='grid gap-9 lg:grid-cols-2-center lg:items-center lg:gap-0 mb-40 lg:mb-36'>
           <div className='hero-bg' />
           <div className='text-center px-6 lg:col-start-2 lg:row-start-1 lg:text-left'>
-            <h1 className='text-neutral-dark-violet font-bold text-5xl tracking-tighter mb-3 lg:text-6xl lg:tracking-tightest lg:mb-0'>
-              More than just shorter links
-            </h1>
-            <p className='text-neutral-grayish-violet mb-8 leading-relaxed lg:text-2xl tracking-wide lg:max-w-lg lg:mb-9'>
+            <Title>More than just shorter links</Title>
+            <Paragraph>
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
-            </p>
+            </Paragraph>
             <Link href='/sign-up' variant='primary' className='mx-auto lg:mx-0'>
               Get Started
             </Link>
