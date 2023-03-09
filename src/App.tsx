@@ -1,14 +1,14 @@
-import facebookIcon from './assets/images/icon-facebook.svg';
-import twitterIcon from './assets/images/icon-twitter.svg';
-import pinterestIcon from './assets/images/icon-pinterest.svg';
-import instagramIcon from './assets/images/icon-instagram.svg';
+import sitemap from './assets/data/sitemap';
+
 import Attribution from './components/Attribution';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Link from './components/Link';
 import Paragraph from './components/Paragraph';
 import Title from './components/Title';
 
 import './App.css';
+import socials from './assets/data/socials';
 
 function App(): JSX.Element {
   return (
@@ -58,79 +58,29 @@ function App(): JSX.Element {
           </div>
         </section>
       </main>
-      <footer className='bg-neutral-dark-violet text-neutral-white'>
-        <div className='container mx-auto px-6 py-14 grid gap-14 justify-items-center'>
-          <svg className='w-30 h-9 fill-neutral-white'>
+      <Footer>
+        <Footer.Logo>
+          <svg className='w-30 h-9'>
             <use xlinkHref='images/logo.svg#logo' />
           </svg>
-          {/* TODO: refactor links */}
-          <div className='grid gap-12 justify-items-center'>
-            <div className='text-center'>
-              <h2 className='mb-7 text-md font-bold tracking-tight'>
-                Features
-              </h2>
-              <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
-                <li>
-                  <a href='/'>Link Shortening</a>
-                </li>
-                <li>
-                  <a href='/'>Branded Links</a>
-                </li>
-                <li>
-                  <a href='/'>Analytics</a>
-                </li>
-              </ul>
-            </div>
-            <div className='text-center'>
-              <h2 className='mb-7 text-md font-bold tracking-tight'>
-                Resources
-              </h2>
-              <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
-                <li>
-                  <a href='/'>Blog</a>
-                </li>
-                <li>
-                  <a href='/'>Developers</a>
-                </li>
-                <li>
-                  <a href='/'>Suppor</a>
-                </li>
-              </ul>
-            </div>
-            <div className='text-center'>
-              <h2 className='mb-7 text-md font-bold tracking-tight'>Company</h2>
-              <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
-                <li>
-                  <a href='/'>About</a>
-                </li>
-                <li>
-                  <a href='/'>Our Team</a>
-                </li>
-                <li>
-                  <a href='/'>Careers</a>
-                </li>
-                <li>
-                  <a href='/'>Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className='flex gap-6 items-center'>
-            <a href='/'>
-              <img src={facebookIcon} alt='facebook' />
-            </a>
-            <a href='/'>
-              <img src={twitterIcon} alt='twitter' />
-            </a>
-            <a href='/'>
-              <img src={pinterestIcon} alt='pinterest' />
-            </a>
-            <a href='/'>
-              <img src={instagramIcon} alt='instagram' />
-            </a>
-          </div>
-        </div>
-      </footer>
+        </Footer.Logo>
+        <Footer.Sitemap>
+          {sitemap.map(({ title, links }) => (
+            <Footer.SitemapGroup key={title} title={title}>
+              {links.map(({ label, url }) => (
+                <Footer.SitemapItem key={label}>
+                  <a href={url}>{label}</a>
+                </Footer.SitemapItem>
+              ))}
+            </Footer.SitemapGroup>
+          ))}
+        </Footer.Sitemap>
+        <Footer.Socials>
+          {socials.map(({ alt, icon, href }) => (
+            <Footer.SocialsLink key={alt} alt={alt} icon={icon} href={href} />
+          ))}
+        </Footer.Socials>
+      </Footer>
       <Attribution name='Abián Izquierdo' url='https://www.abizmo.dev' />
     </>
   );
