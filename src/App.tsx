@@ -1,3 +1,7 @@
+import facebookIcon from './assets/images/icon-facebook.svg';
+import twitterIcon from './assets/images/icon-twitter.svg';
+import pinterestIcon from './assets/images/icon-pinterest.svg';
+import instagramIcon from './assets/images/icon-instagram.svg';
 import Attribution from './components/Attribution';
 import Header from './components/Header';
 import Link from './components/Link';
@@ -111,8 +115,20 @@ function App(): JSX.Element {
               </ul>
             </div>
           </div>
-          {/* TODO: insert icons */}
-          <div>icons</div>
+          <div className='flex gap-6 items-center'>
+            <a href='/'>
+              <img src={facebookIcon} alt='facebook' />
+            </a>
+            <a href='/'>
+              <img src={twitterIcon} alt='twitter' />
+            </a>
+            <a href='/'>
+              <img src={pinterestIcon} alt='pinterest' />
+            </a>
+            <a href='/'>
+              <img src={instagramIcon} alt='instagram' />
+            </a>
+          </div>
         </div>
       </footer>
       <Attribution name='Abián Izquierdo' url='https://www.abizmo.dev' />
