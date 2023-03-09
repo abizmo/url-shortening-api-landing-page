@@ -39,12 +39,11 @@ function App(): JSX.Element {
       <main>
         <section className='grid gap-9 lg:grid-cols-2-center lg:items-center lg:gap-0'>
           <div className='hero-bg' />
-          <div className='text-center pl-6 lg:col-start-2 lg:row-start-1 lg:text-left'>
-            {/* TODO: config fonts size in theme */}
-            <h1 className='text-neutral-dark-violet font-bold text-4xl tracking-tight mb-3 lg:text-7xl lg:tracking-tighter'>
+          <div className='text-center px-6 lg:col-start-2 lg:row-start-1 lg:text-left'>
+            <h1 className='text-neutral-dark-violet font-bold text-5xl tracking-tighter mb-3 lg:text-6xl lg:tracking-tightest lg:mb-0'>
               More than just shorter links
             </h1>
-            <p className='text-neutral-grayish-violet mb-8 lg:text-2xl lg:tracking-tighter lg:max-w-lg lg:mb-9'>
+            <p className='text-neutral-grayish-violet mb-8 leading-relaxed lg:text-2xl tracking-wide lg:max-w-lg lg:mb-9'>
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </p>
