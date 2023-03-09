@@ -10,7 +10,7 @@ function App(): JSX.Element {
     <>
       <Header>
         <Header.Logo>
-          <svg className='w-30 h-9'>
+          <svg className='w-30 h-9 fill-neutral-dark-violet'>
             <use xlinkHref='images/logo.svg#logo' />
           </svg>
         </Header.Logo>
@@ -53,6 +53,68 @@ function App(): JSX.Element {
           </div>
         </section>
       </main>
+      <footer className='bg-neutral-dark-violet text-neutral-white'>
+        <div className='container mx-auto px-6 py-14 grid gap-14 justify-items-center'>
+          <svg className='w-30 h-9 fill-neutral-white'>
+            <use xlinkHref='images/logo.svg#logo' />
+          </svg>
+          {/* TODO: refactor links */}
+          <div className='grid gap-12 justify-items-center'>
+            <div className='text-center'>
+              <h2 className='mb-7 text-md font-bold tracking-tight'>
+                Features
+              </h2>
+              <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
+                <li>
+                  <a href='/'>Link Shortening</a>
+                </li>
+                <li>
+                  <a href='/'>Branded Links</a>
+                </li>
+                <li>
+                  <a href='/'>Analytics</a>
+                </li>
+              </ul>
+            </div>
+            <div className='text-center'>
+              <h2 className='mb-7 text-md font-bold tracking-tight'>
+                Resources
+              </h2>
+              <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
+                <li>
+                  <a href='/'>Blog</a>
+                </li>
+                <li>
+                  <a href='/'>Developers</a>
+                </li>
+                <li>
+                  <a href='/'>Suppor</a>
+                </li>
+              </ul>
+            </div>
+            <div className='text-center'>
+              <h2 className='mb-7 text-md font-bold tracking-tight'>Company</h2>
+              <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
+                <li>
+                  <a href='/'>About</a>
+                </li>
+                <li>
+                  <a href='/'>Our Team</a>
+                </li>
+                <li>
+                  <a href='/'>Careers</a>
+                </li>
+                <li>
+                  <a href='/'>Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* TODO: insert icons */}
+          <div>icons</div>
+        </div>
+      </footer>
+      {/* TODO: change name Footer Component */}
       <Footer name='Abián Izquierdo' url='https://www.abizmo.dev' />
     </>
   );
