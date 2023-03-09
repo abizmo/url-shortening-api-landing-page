@@ -1,9 +1,10 @@
-import Footer from './components/Footer';
+import Attribution from './components/Attribution';
 import Header from './components/Header';
 import Link from './components/Link';
-import './App.css';
-import Title from './components/Title';
 import Paragraph from './components/Paragraph';
+import Title from './components/Title';
+
+import './App.css';
 
 function App(): JSX.Element {
   return (
@@ -114,8 +115,7 @@ function App(): JSX.Element {
           <div>icons</div>
         </div>
       </footer>
-      {/* TODO: change name Footer Component */}
-      <Footer name='Abián Izquierdo' url='https://www.abizmo.dev' />
+      <Attribution name='Abián Izquierdo' url='https://www.abizmo.dev' />
     </>
   );
 }

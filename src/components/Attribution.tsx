@@ -1,9 +1,9 @@
-interface FooterProps {
+interface AttributionProps {
   name: string;
   url: string;
 }
 
-function Footer({ name, url }: FooterProps): JSX.Element {
+function Attribution({ name, url }: AttributionProps): JSX.Element {
   return (
     <footer className='text-xs text-center'>
       Challenge by{' '}
@@ -24,4 +24,4 @@ function Footer({ name, url }: FooterProps): JSX.Element {
   );
 }
 
-export default Footer;
+export default Attribution;
