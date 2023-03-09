@@ -15,7 +15,46 @@ module.exports = {
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
     },
+    fontSize: {
+      xs: ['.6875rem', '1.3'],
+      sm: ['.9375rem', '1.7'],
+      md: ['1rem', '1'],
+      lg: ['1.125rem', '1'],
+      xl: ['1.25rem', '1'],
+      '2xl': ['1.375rem', '1.6'],
+      '3xl': ['1.75rem', '1'],
+      '4xl': ['2.5rem', '1'],
+      '5xl': ['2.625rem', '1.1'],
+      '6xl': ['5.125rem', '1.1'],
+    },
+    letterSpacing: {
+      tightest: '-0.04em',
+      tighter: '-0.025em',
+      tight: '-0.012em',
+      normal: '0em',
+      wide: '0.007em',
+    },
+    lineHeight: {
+      none: '1',
+      tight: '1.1',
+      snug: '1.3',
+      normal: '1.6',
+      relaxed: '1.7',
+      loose: '1.8',
+    },
+    screens: {
+      lg: '1158px',
+    },
     extend: {
+      backgroundImage: {
+        hero: 'url("images/illustration-working.svg")',
+      },
+      backgroundSize: {
+        'hero-size': 'auto 100%',
+      },
+      gridTemplateColumns: {
+        '2-center': '1fr repeat(2, 579px) 1fr',
+      },
       spacing: {
         30: '7.5rem',
       },

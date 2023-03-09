@@ -1,6 +1,10 @@
 import { PropsWithChildren, useState } from 'react';
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from 'tailwind-config';
 
 import useMediaQuery from '../hooks/useMediaQuery';
+
+const { theme } = resolveConfig(tailwindConfig);
 
 function Header({ children }: PropsWithChildren): JSX.Element {
   return (
@@ -22,7 +26,7 @@ Header.Logo = HeaderLogo;
 
 function HeaderNavWrapper({ children }: PropsWithChildren) {
   const [showMenu, setShowMenu] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
   const handleOpenMenu = () => setShowMenu((prev) => !prev);
 
@@ -72,7 +76,7 @@ function HeaderNav({ ariaLabel, children }: PropsWithChildren<HeaderNavProps>) {
   return (
     <ul
       aria-label={ariaLabel}
-      className='grid gap-4 py-8 lg:flex lg:gap-10 lg:items-center'
+      className='grid gap-4 py-8 lg:text-md lg:tracking-tightest lg:flex lg:gap-10 lg:items-center'
     >
       {children}
     </ul>
@@ -82,7 +86,7 @@ function HeaderNav({ ariaLabel, children }: PropsWithChildren<HeaderNavProps>) {
 Header.Nav = HeaderNav;
 
 function HeaderNavItem({ children }: PropsWithChildren) {
-  return <li>{children}</li>;
+  return <li className='[&>*]:mx-auto'>{children}</li>;
 }
 
 Header.NavItem = HeaderNavItem;

@@ -1,0 +1,3 @@
+.hero-bg {
+  @apply bg-hero bg-no-repeat bg-hero-size bg-[7vw] h-[90vw] lg:bg-[-90%] lg:h-[36.5vw] lg:col-start-3 lg:col-end-5;
+}
