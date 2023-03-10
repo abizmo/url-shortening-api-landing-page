@@ -76,8 +76,12 @@ function App(): JSX.Element {
           ))}
         </Footer.Sitemap>
         <Footer.Socials>
-          {socials.map(({ alt, icon, href }) => (
-            <Footer.SocialsLink key={alt} alt={alt} icon={icon} href={href} />
+          {socials.map(({ brand, href }) => (
+            <Footer.SocialsLink key={brand} href={href}>
+              <svg className='w-6 h-6'>
+                <use xlinkHref={`images/socials-icons.svg#${brand}`} />
+              </svg>
+            </Footer.SocialsLink>
           ))}
         </Footer.Socials>
       </Footer>

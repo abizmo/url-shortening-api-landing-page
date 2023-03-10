@@ -1,33 +1,23 @@
-import facebookIcon from '../images/icon-facebook.svg';
-import twitterIcon from '../images/icon-twitter.svg';
-import pinterestIcon from '../images/icon-pinterest.svg';
-import instagramIcon from '../images/icon-instagram.svg';
-
 interface SocialsType {
-  alt: string;
-  icon: string;
+  brand: string;
   href: string;
 }
 
 const socials: SocialsType[] = [
   {
-    alt: 'facebook',
-    icon: facebookIcon,
+    brand: 'facebook',
     href: '/',
   },
   {
-    alt: 'twitter',
-    icon: twitterIcon,
+    brand: 'twitter',
     href: '/',
   },
   {
-    alt: 'pinterest',
-    icon: pinterestIcon,
+    brand: 'pinterest',
     href: '/',
   },
   {
-    alt: 'instagram',
-    icon: instagramIcon,
+    brand: 'instagram',
     href: '/',
   },
 ];

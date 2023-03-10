@@ -55,16 +55,16 @@ function FooterSocials({ children }: PropsWithChildren) {
 Footer.Socials = FooterSocials;
 
 interface SocialsLinkProps {
-  alt: string;
-  icon: string;
   href: string;
 }
 
-function FooterSocialsLink({ alt, icon, href }: SocialsLinkProps) {
+function FooterSocialsLink({
+  href,
+  children,
+}: PropsWithChildren<SocialsLinkProps>) {
   return (
-    <a href={href}>
-      {/* TODO: change img for svg */}
-      <img src={icon} alt={alt} />
+    <a href={href} className='fill-neutral-white hover:fill-primary-cyan'>
+      {children}
     </a>
   );
 }
