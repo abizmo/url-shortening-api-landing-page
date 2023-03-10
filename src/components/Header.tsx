@@ -2,7 +2,7 @@ import { PropsWithChildren, useState } from 'react';
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from 'tailwind-config';
 
-import useMediaQuery from '../hooks/useMediaQuery';
+import { useMediaQuery } from '@hooks';
 
 const { theme } = resolveConfig(tailwindConfig);
 

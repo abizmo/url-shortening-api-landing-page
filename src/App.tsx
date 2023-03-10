@@ -1,14 +1,14 @@
-import sitemap from './assets/data/sitemap';
-
-import Attribution from './components/Attribution';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Link from './components/Link';
-import Paragraph from './components/Paragraph';
-import Title from './components/Title';
+import { sitemap, socials } from '@assets/data';
+import {
+  Attribution,
+  Footer,
+  Header,
+  Link,
+  Paragraph,
+  Title,
+} from '@components';
 
 import './App.css';
-import socials from './assets/data/socials';
 
 function App(): JSX.Element {
   return (
