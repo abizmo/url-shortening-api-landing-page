@@ -57,6 +57,16 @@ function App(): JSX.Element {
             </Link>
           </div>
         </section>
+        <section className='bg-primary-violet py-24 lg:py-14'>
+          {/* TODO: change for title */}
+          <h2 className='text-neutral-white text-3xl lg:text-4xl font-bold tracking-tighter mb-6 lg:mb-8 text-center'>
+            Boost your links today
+          </h2>
+          {/* TODO: Fix the link button size */}
+          <Link href='/sign-up' variant='primary' className='mx-auto text-xl'>
+            Get Started
+          </Link>
+        </section>
       </main>
       <Footer>
         <Footer.Logo>
