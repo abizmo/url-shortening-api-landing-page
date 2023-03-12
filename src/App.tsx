@@ -77,6 +77,7 @@ function App(): JSX.Element {
             </Link>
           </div>
         </section>
+        {/* TODO: add background pattern */}
         <section className='bg-primary-violet py-24 lg:py-14'>
           <Title
             element='h2'
@@ -86,6 +87,7 @@ function App(): JSX.Element {
           >
             Boost your links today
           </Title>
+          {/* TODO: fix button hover when it's over dark bg */}
           <Link
             href='/sign-up'
             variant='primary'
