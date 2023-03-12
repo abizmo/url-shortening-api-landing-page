@@ -1,27 +1,74 @@
-interface FooterProps {
-  name: string;
-  url: string;
-}
+import { PropsWithChildren } from 'react';
 
-function Footer({ name, url }: FooterProps): JSX.Element {
+function Footer({ children }: PropsWithChildren): JSX.Element {
   return (
-    <footer className='text-xs text-center'>
-      Challenge by{' '}
-      <a
-        href='https://www.frontendmentor.io?ref=challenge'
-        target='_blank'
-        rel='noreferrer'
-        className='text-blue-800'
-      >
-        Frontend Mentor
-      </a>
-      . Coded by{' '}
-      <a className='text-blue-800' href={url}>
-        {name}
-      </a>
-      .
+    <footer className='bg-neutral-dark-violet text-neutral-white fill-neutral-white'>
+      <div className='container mx-auto px-6 py-14 lg:py-20 grid gap-14 justify-items-center lg:flex lg:justify-between lg:items-start'>
+        {children}
+      </div>
     </footer>
   );
 }
+
+function FooterLogo({ children }: PropsWithChildren) {
+  return <div>{children}</div>;
+}
+
+Footer.Logo = FooterLogo;
+
+function FooterSitemap({ children }: PropsWithChildren) {
+  return (
+    <div className='grid gap-12 justify-items-center lg:flex-1 lg:flex lg:justify-evenly'>
+      {children}
+    </div>
+  );
+}
+
+Footer.Sitemap = FooterSitemap;
+
+function FooterSitemapGroup({
+  children,
+  title,
+}: PropsWithChildren<{ title: string }>) {
+  return (
+    <div className='text-center lg:text-left'>
+      <h2 className='mb-7 text-md font-bold tracking-tight'>{title}</h2>
+      <ul className='[&>:not(:last-child)]:mb-4 text-neutral-gray text-md tracking-tightest'>
+        {children}
+      </ul>
+    </div>
+  );
+}
+
+Footer.SitemapGroup = FooterSitemapGroup;
+
+function FooterSitemapItem({ children }: PropsWithChildren) {
+  return <li className='hover:text-primary-cyan'>{children}</li>;
+}
+
+Footer.SitemapItem = FooterSitemapItem;
+
+function FooterSocials({ children }: PropsWithChildren) {
+  return <div className='flex gap-6 items-center'>{children}</div>;
+}
+
+Footer.Socials = FooterSocials;
+
+interface SocialsLinkProps {
+  href: string;
+}
+
+function FooterSocialsLink({
+  href,
+  children,
+}: PropsWithChildren<SocialsLinkProps>) {
+  return (
+    <a href={href} className='fill-neutral-white hover:fill-primary-cyan'>
+      {children}
+    </a>
+  );
+}
+
+Footer.SocialsLink = FooterSocialsLink;
 
 export default Footer;

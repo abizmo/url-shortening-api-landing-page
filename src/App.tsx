@@ -1,16 +1,21 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Link from './components/Link';
+import { sitemap, socials } from '@assets/data';
+import {
+  Attribution,
+  Footer,
+  Header,
+  Link,
+  Paragraph,
+  Title,
+} from '@components';
+
 import './App.css';
-import Title from './components/Title';
-import Paragraph from './components/Paragraph';
 
 function App(): JSX.Element {
   return (
     <>
       <Header>
         <Header.Logo>
-          <svg className='w-30 h-9'>
+          <svg className='w-30 h-9 fill-neutral-dark-violet'>
             <use xlinkHref='images/logo.svg#logo' />
           </svg>
         </Header.Logo>
@@ -53,7 +58,34 @@ function App(): JSX.Element {
           </div>
         </section>
       </main>
-      <Footer name='Abián Izquierdo' url='https://www.abizmo.dev' />
+      <Footer>
+        <Footer.Logo>
+          <svg className='w-30 h-9'>
+            <use xlinkHref='images/logo.svg#logo' />
+          </svg>
+        </Footer.Logo>
+        <Footer.Sitemap>
+          {sitemap.map(({ title, links }) => (
+            <Footer.SitemapGroup key={title} title={title}>
+              {links.map(({ label, url }) => (
+                <Footer.SitemapItem key={label}>
+                  <a href={url}>{label}</a>
+                </Footer.SitemapItem>
+              ))}
+            </Footer.SitemapGroup>
+          ))}
+        </Footer.Sitemap>
+        <Footer.Socials>
+          {socials.map(({ brand, href }) => (
+            <Footer.SocialsLink key={brand} href={href}>
+              <svg className='w-6 h-6'>
+                <use xlinkHref={`images/socials-icons.svg#${brand}`} />
+              </svg>
+            </Footer.SocialsLink>
+          ))}
+        </Footer.Socials>
+      </Footer>
+      <Attribution name='Abián Izquierdo' url='https://www.abizmo.dev' />
     </>
   );
 }
