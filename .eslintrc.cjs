@@ -29,12 +29,7 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'react/jsx-props-no-spreading': [
-      2,
-      {
-        html: 'ignore',
-      },
-    ],
+    'react/jsx-props-no-spreading': 'off',
   },
   settings: {
     typescript: {

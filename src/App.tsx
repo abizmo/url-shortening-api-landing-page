@@ -60,7 +60,9 @@ function App(): JSX.Element {
         <section className='grid gap-9 lg:grid-cols-2-center lg:items-center lg:gap-0 mb-40 lg:mb-36'>
           <div className='hero-bg' />
           <div className='text-center px-6 lg:col-start-2 lg:row-start-1 lg:text-left'>
-            <Title element='h1'>More than just shorter links</Title>
+            <Title element='h1' className='mb-3 lg:mb-0'>
+              More than just shorter links
+            </Title>
             <Paragraph>
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
@@ -76,7 +78,14 @@ function App(): JSX.Element {
           </div>
         </section>
         <section className='bg-primary-violet py-24 lg:py-14'>
-          <Title element='h2'>Boost your links today</Title>
+          <Title
+            element='h2'
+            color='light'
+            align='center'
+            className='mb-6 lg:mb-8'
+          >
+            Boost your links today
+          </Title>
           <Link
             href='/sign-up'
             variant='primary'
