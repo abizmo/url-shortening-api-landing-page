@@ -1,3 +1,6 @@
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from 'tailwind-config';
+
 import { sitemap, socials } from '@assets/data';
 import {
   Attribution,
@@ -7,10 +10,15 @@ import {
   Paragraph,
   Title,
 } from '@components';
+import { useMediaQuery } from '@hooks';
 
 import './App.css';
 
+const { theme } = resolveConfig(tailwindConfig);
+
 function App(): JSX.Element {
+  const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
+
   return (
     <>
       <Header>
@@ -25,7 +33,12 @@ function App(): JSX.Element {
               <Link href='/login'>Login</Link>
             </Header.NavItem>
             <Header.NavItem>
-              <Link href='/sign-up' variant='primary' size='full'>
+              <Link
+                href='/sign-up'
+                variant='primary'
+                size={isDesktop ? 'small' : 'full'}
+                className={isDesktop ? 'tracking-tighter' : 'tracking-tight'}
+              >
                 Sign Up
               </Link>
             </Header.NavItem>
@@ -52,7 +65,12 @@ function App(): JSX.Element {
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </Paragraph>
-            <Link href='/sign-up' variant='primary' className='mx-auto lg:mx-0'>
+            <Link
+              href='/sign-up'
+              variant='primary'
+              size='medium'
+              className='mx-auto lg:mx-0'
+            >
               Get Started
             </Link>
           </div>
@@ -62,8 +80,12 @@ function App(): JSX.Element {
           <h2 className='text-neutral-white text-3xl lg:text-4xl font-bold tracking-tighter mb-6 lg:mb-8 text-center'>
             Boost your links today
           </h2>
-          {/* TODO: Fix the link button size */}
-          <Link href='/sign-up' variant='primary' className='mx-auto text-xl'>
+          <Link
+            href='/sign-up'
+            variant='primary'
+            size='medium'
+            className='mx-auto text-xl'
+          >
             Get Started
           </Link>
         </section>

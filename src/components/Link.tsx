@@ -4,13 +4,15 @@ import { cva, type VariantProps } from 'class-variance-authority';
 const link = cva('block text-center font-bold', {
   variants: {
     variant: {
-      text: 'py-2 lg:hover:text-neutral-dark-violet',
+      text: 'lg:hover:text-neutral-dark-violet',
       primary:
-        'py-4 bg-primary-cyan text-neutral-white rounded-full px-8 lg:hover:bg-opacity-70',
+        'bg-primary-cyan text-neutral-white rounded-full lg:hover:bg-opacity-70',
     },
     size: {
-      normal: 'w-fit',
-      full: 'w-full',
+      small: 'w-fit py-3 px-6',
+      medium: 'w-fit py-4 px-10',
+      normal: 'w-fit py-2',
+      full: 'w-full py-4',
     },
   },
   defaultVariants: {
