@@ -48,6 +48,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: 'url("images/illustration-working.svg")',
+        'boost-mobile': 'url("images/bg-boost-mobile.svg")',
+        'boost-desktop': 'url("images/bg-boost-desktop.svg")',
       },
       backgroundSize: {
         'hero-size': 'auto 100%',

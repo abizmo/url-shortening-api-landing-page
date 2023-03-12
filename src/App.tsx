@@ -77,8 +77,7 @@ function App(): JSX.Element {
             </Link>
           </div>
         </section>
-        {/* TODO: add background pattern */}
-        <section className='bg-primary-violet py-24 lg:py-14'>
+        <section className='bg-primary-violet py-24 lg:py-14 bg-boost-mobile lg:bg-boost-desktop bg-cover'>
           <Title
             element='h2'
             color='light'
