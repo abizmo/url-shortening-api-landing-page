@@ -17,7 +17,6 @@ const heading = cva('font-bold tracking-tighter', {
     },
   },
   defaultVariants: {
-    align: 'left',
     color: 'dark',
   },
 });
