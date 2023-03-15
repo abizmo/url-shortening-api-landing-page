@@ -6,6 +6,7 @@ const heading = cva('font-bold tracking-tighter', {
     element: {
       h1: 'text-5xl lg:text-6xl lg:tracking-tightest',
       h2: 'text-3xl lg:text-4xl',
+      h3: 'text-2xl',
     },
     align: {
       center: 'text-center',
