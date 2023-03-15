@@ -1,6 +1,7 @@
 import { Paragraph, Title } from '@components';
 import { PropsWithChildren } from 'react';
 
+// TODO: change layout when desktop view
 function Statistics({ children }: PropsWithChildren): JSX.Element {
   return <ul className='grid gap-20'>{children}</ul>;
 }
