@@ -12,6 +12,7 @@ const paragraph = cva(
       size: {
         lg: 'text-lg lg:text-2xl',
         md: 'text-md lg:text-lg',
+        sm: 'text-sm tracking-normal',
       },
     },
     defaultVariants: {
