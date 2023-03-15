@@ -1,13 +1,14 @@
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from 'tailwind-config';
 
-import { sitemap, socials } from '@assets/data';
+import { sitemap, socials, statistics } from '@assets/data';
 import {
   Attribution,
   Footer,
   Header,
   Link,
   Paragraph,
+  Statistics,
   Title,
 } from '@components';
 import { useMediaQuery } from '@hooks';
@@ -63,7 +64,7 @@ function App(): JSX.Element {
             <Title element='h1' className='mb-3 lg:mb-0'>
               More than just shorter links
             </Title>
-            <Paragraph>
+            <Paragraph size='lg' className='mb-8 lg:mb-9'>
               Build your brand’s recognition and get detailed insights on how
               your links are performing.
             </Paragraph>
@@ -75,6 +76,32 @@ function App(): JSX.Element {
             >
               Get Started
             </Link>
+          </div>
+        </section>
+        <section className='bg-primary-violet/[.08] py-20 lg:py-30'>
+          <div className='container mx-auto px-6'>
+            <Title
+              element='h2'
+              align='center'
+              color='dark'
+              className='mb-6 lg:mb-5'
+            >
+              Advanced Statistics
+            </Title>
+            <Paragraph
+              align='center'
+              className='mb-20 lg:mb-24 lg:max-w-lg lg:mx-auto'
+            >
+              Track how your links are performing across the web with our
+              advanced statistics dashboard.
+            </Paragraph>
+            <Statistics>
+              {statistics.map(({ title, icon, description }) => (
+                <Statistics.Item title={title} svgIcon={icon} key={title}>
+                  {description}
+                </Statistics.Item>
+              ))}
+            </Statistics>
           </div>
         </section>
         <section className='bg-primary-violet py-24 lg:py-14 bg-boost-mobile lg:bg-boost-desktop bg-cover'>
