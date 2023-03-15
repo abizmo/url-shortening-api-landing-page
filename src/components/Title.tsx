@@ -16,6 +16,13 @@ const heading = cva('font-bold tracking-tighter', {
       light: 'text-neutral-white',
     },
   },
+  compoundVariants: [
+    {
+      element: 'h2',
+      color: 'dark',
+      className: 'text-neutral-dark-blue',
+    },
+  ],
   defaultVariants: {
     color: 'dark',
   },
