@@ -1,10 +1,38 @@
-import { PropsWithChildren } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import { AllHTMLAttributes } from 'react';
 
-// TODO: make variants
-function Paragraph({ children }: PropsWithChildren) {
+const paragraph = cva(
+  'text-neutral-grayish-violet leading-relaxed lg:leading-relaxed tracking-wide',
+  {
+    variants: {
+      align: {
+        center: 'text-center',
+        left: 'text-left',
+      },
+      size: {
+        lg: 'text-lg lg:text-2xl',
+        md: 'text-md lg:text-lg',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+    },
+  },
+);
+
+interface ParagraphProps
+  extends Omit<AllHTMLAttributes<HTMLParagraphElement>, 'color' | 'size'>,
+    VariantProps<typeof paragraph> {}
+
+function Paragraph({
+  align,
+  className,
+  size,
+  ...props
+}: ParagraphProps): JSX.Element {
   return (
-    <p className='text-neutral-grayish-violet mb-8 leading-relaxed lg:text-2xl tracking-wide lg:max-w-lg lg:mb-9'>
-      {children}
+    <p className={paragraph({ align, size, className })} {...props}>
+      {props.children}
     </p>
   );
 }
