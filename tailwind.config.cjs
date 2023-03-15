@@ -43,7 +43,7 @@ module.exports = {
       loose: '1.8',
     },
     screens: {
-      lg: '1158px',
+      lg: '1220px',
     },
     extend: {
       backgroundImage: {
@@ -55,7 +55,7 @@ module.exports = {
         'hero-size': 'auto 100%',
       },
       gridTemplateColumns: {
-        '2-center': '1fr repeat(2, 579px) 1fr',
+        '2-center': '1fr repeat(2, 610px) 1fr',
       },
       spacing: {
         30: '7.5rem',
