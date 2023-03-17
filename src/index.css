@@ -5,3 +5,7 @@
 body {
   @apply text-lg font-medium;
 }
+
+.link {
+  @apply text-primary-cyan font-bold hover:underline underline-offset-4;
+}

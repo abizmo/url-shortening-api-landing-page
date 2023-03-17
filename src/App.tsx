@@ -3,7 +3,6 @@ import tailwindConfig from 'tailwind-config';
 
 import { sitemap, socials, statistics } from '@assets/data';
 import {
-  Attribution,
   Footer,
   Header,
   Link,
@@ -151,7 +150,6 @@ function App(): JSX.Element {
           ))}
         </Footer.Socials>
       </Footer>
-      <Attribution name='Abián Izquierdo' url='https://www.abizmo.dev' />
     </>
   );
 }
