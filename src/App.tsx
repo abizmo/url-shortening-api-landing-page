@@ -78,7 +78,20 @@ function App(): JSX.Element {
           </div>
         </section>
         <section className='bg-primary-violet/[.08] py-20 lg:py-30'>
-          <div className='container mx-auto px-6'>
+          {/* TODO: feat add bg image */}
+          {/* TODO: feat make resposive */}
+          <div className='container mx-auto px-6 py-30 relative'>
+            <div className='p-6 bg-primary-violet rounded-lg lg:px-16 lg:py-14 flex flex-col gap-4 lg:flex-row lg:gap-6 absolute inset-x-6 -top-20 lg:-top-30 -translate-y-1/2'>
+              <input
+                type='text'
+                placeholder='Shorten a link here...'
+                className='rounded p-4 placeholder-neutral-grayish-violet text-md tracking-wide'
+              />
+              {/* TODO: feat square button */}
+              <Link href='/' variant='primary' size='full'>
+                Shorten It!
+              </Link>
+            </div>
             <Title
               element='h2'
               align='center'
