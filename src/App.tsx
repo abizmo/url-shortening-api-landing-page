@@ -88,7 +88,7 @@ function App(): JSX.Element {
                 className='rounded p-4 placeholder-neutral-grayish-violet text-md tracking-wide'
               />
               {/* TODO: feat square button */}
-              <Link href='/' variant='primary' size='full'>
+              <Link href='/' variant='primary' size='full' shape='square'>
                 Shorten It!
               </Link>
             </div>
