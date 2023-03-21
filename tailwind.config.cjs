@@ -50,9 +50,12 @@ module.exports = {
         hero: 'url("images/illustration-working.svg")',
         'boost-mobile': 'url("images/bg-boost-mobile.svg")',
         'boost-desktop': 'url("images/bg-boost-desktop.svg")',
+        'shorten-mobile': 'url("images/bg-shorten-mobile.svg")',
+        'shorten-desktop': 'url("images/bg-shorten-desktop.svg")',
       },
       backgroundSize: {
         'hero-size': 'auto 100%',
+        '3/4': '75%',
       },
       gridTemplateColumns: {
         '2-center': '1fr repeat(2, 610px) 1fr',
