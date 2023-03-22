@@ -1,4 +1,4 @@
-import { LinkHTMLAttributes } from 'react';
+import { AllHTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const link = cva('block text-center font-bold', {
@@ -26,7 +26,10 @@ const link = cva('block text-center font-bold', {
 });
 
 interface LinkProps
-  extends LinkHTMLAttributes<HTMLAnchorElement>,
+  extends Omit<
+      AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
+      'size' | 'shape'
+    >,
     VariantProps<typeof link> {}
 
 function Link({
@@ -34,12 +37,21 @@ function Link({
   size,
   shape,
   className,
+  href,
+  type,
   ...props
 }: LinkProps): JSX.Element {
+  const classnames = link({ variant, size, shape, className });
+  if (href)
+    return (
+      <a className={classnames} href={href} {...props}>
+        {props.children}
+      </a>
+    );
   return (
-    <a className={link({ variant, size, shape, className })} {...props}>
+    <button type='submit' className={classnames} {...props}>
       {props.children}
-    </a>
+    </button>
   );
 }
 
