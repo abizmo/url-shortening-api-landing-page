@@ -108,7 +108,9 @@ function App(): JSX.Element {
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div
-                  className={`flex-1 relative ${errors.link ? 'pb-10 ' : ''}`}
+                  className={`flex-1 relative ${
+                    errors.link ? 'pb-10 lg:pb-0' : ''
+                  }`}
                 >
                   <input
                     type='text'
@@ -121,7 +123,7 @@ function App(): JSX.Element {
                     {...register('link')}
                   />
                   {errors.link && (
-                    <p className='absolute bottom-3 italic text-secondary-red'>
+                    <p className='absolute bottom-3 lg:top-full lg:translate-y-2 italic text-secondary-red'>
                       {errors.link.message}
                     </p>
                   )}
