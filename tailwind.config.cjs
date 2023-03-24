@@ -11,6 +11,7 @@ module.exports = {
       'neutral-grayish-violet': 'hsl(257, 7%, 63%)',
       'neutral-dark-blue': 'hsl(255, 11%, 22%)',
       'neutral-dark-violet': 'hsl(260, 8%, 14%)',
+      transparent: 'transparent',
     },
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],

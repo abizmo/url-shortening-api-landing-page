@@ -24,7 +24,7 @@ type FormData = {
 };
 
 const schema: ZodType<FormData> = z.object({
-  link: z.string().url({ message: 'Please add a valid link' }),
+  link: z.string().url({ message: 'Please add a link' }),
 });
 
 function App(): JSX.Element {
@@ -107,14 +107,24 @@ function App(): JSX.Element {
                 className='p-6 bg-primary-violet bg-shorten-mobile lg:bg-shorten-desktop bg-3/4 bg-no-repeat bg-right-top lg:bg-cover rounded-lg lg:px-16 lg:py-14 flex flex-col gap-4 lg:flex-row lg:gap-6'
                 onSubmit={handleSubmit(onSubmit)}
               >
-                <div className='flex-1'>
+                <div
+                  className={`flex-1 relative ${errors.link ? 'pb-10 ' : ''}`}
+                >
                   <input
                     type='text'
                     placeholder='Shorten a link here...'
-                    className='rounded p-4 placeholder-neutral-grayish-violet text-md tracking-wide w-full'
+                    className={`${
+                      errors.link
+                        ? 'border-secondary-red placeholder-secondary-red placeholder-opacity-70 text-secondary-red'
+                        : 'border-transparent placeholder-neutral-grayish-violet'
+                    } border-4 rounded p-4 text-md tracking-wide w-full outline-none`}
                     {...register('link')}
                   />
-                  {errors.link && <p>{errors.link.message}</p>}
+                  {errors.link && (
+                    <p className='absolute bottom-3 italic text-secondary-red'>
+                      {errors.link.message}
+                    </p>
+                  )}
                 </div>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <Link
