@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import resolveConfig from 'tailwindcss/resolveConfig';
 import tailwindConfig from 'tailwind-config';
 
@@ -78,11 +79,73 @@ function App(): JSX.Element {
             </Link>
           </div>
         </section>
+        {/* TODO: fix positions  of section */}
         <section className='bg-primary-violet/[.08] py-20 lg:py-30'>
           <div className='container mx-auto px-6 py-30 relative'>
             <div className='absolute inset-x-6 -top-20 lg:-top-30 -translate-y-1/2'>
               <ShortenBox />
             </div>
+            <ul>
+              <li className='mb-6'>
+                <div className='bg-neutral-white rounded-md lg:px-6 lg:py-4 lg:flex lg:justify-between items-center text-md tracking-wide lg:text-xl'>
+                  <div className='px-4 pt-4 pb-3 lg:px-0 lg:py-0 border-b border-b-neutral-gray lg:border-b-0'>
+                    <p>http://www.frontendmentor.io</p>
+                  </div>
+                  <div className='p-4 lg:p-0 lg:flex lg:gap-6 lg:items-center'>
+                    <p className='mb-4 lg:mb-0 text-primary-cyan lg:text-right'>
+                      https://rel.ink/k4lKyk
+                    </p>
+                    {/* TODO: change button when copied */}
+                    <Link
+                      variant='primary'
+                      size={isDesktop ? 'medium' : 'full'}
+                      shape='square'
+                    >
+                      Copy
+                    </Link>
+                  </div>
+                </div>
+              </li>
+              <li className='mb-6'>
+                <div className='bg-neutral-white rounded-md lg:px-6 lg:py-4 lg:flex lg:justify-between items-center text-md tracking-wide lg:text-xl'>
+                  <div className='px-4 pt-4 pb-3 lg:px-0 lg:py-0 border-b border-b-neutral-gray lg:border-b-0'>
+                    <p>http://www.frontendmentor.io</p>
+                  </div>
+                  <div className='p-4 lg:p-0 lg:flex lg:gap-6 lg:items-center'>
+                    <p className='mb-4 lg:mb-0 text-primary-cyan lg:text-right'>
+                      https://rel.ink/k4lKyk
+                    </p>
+                    <Link
+                      variant='primary'
+                      size={isDesktop ? 'medium' : 'full'}
+                      shape='square'
+                    >
+                      Copy
+                    </Link>
+                  </div>
+                </div>
+              </li>
+
+              <li className='mb-6'>
+                <div className='bg-neutral-white rounded-md lg:px-6 lg:py-4 lg:flex lg:justify-between items-center text-md tracking-wide lg:text-xl'>
+                  <div className='px-4 pt-4 pb-3 lg:px-0 lg:py-0 border-b border-b-neutral-gray lg:border-b-0'>
+                    <p>http://www.frontendmentor.io</p>
+                  </div>
+                  <div className='p-4 lg:p-0 lg:flex lg:gap-6 lg:items-center'>
+                    <p className='mb-4 lg:mb-0 text-primary-cyan lg:text-right'>
+                      https://rel.ink/k4lKyk
+                    </p>
+                    <Link
+                      variant='primary'
+                      size={isDesktop ? 'medium' : 'full'}
+                      shape='square'
+                    >
+                      Copy
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            </ul>
             <Title
               element='h2'
               align='center'
