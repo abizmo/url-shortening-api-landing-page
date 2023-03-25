@@ -49,6 +49,7 @@ function Link({
       </a>
     );
   return (
+    // TODO: fix type
     <button type='submit' className={classnames} {...props}>
       {props.children}
     </button>

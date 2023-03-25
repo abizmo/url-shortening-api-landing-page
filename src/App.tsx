@@ -21,6 +21,9 @@ const { theme } = resolveConfig(tailwindConfig);
 function App(): JSX.Element {
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
+  // TODO: feat add copy link
+  const handleCopy = () => console.log('copy');
+
   return (
     <>
       <Header>
@@ -100,6 +103,7 @@ function App(): JSX.Element {
                       variant='primary'
                       size={isDesktop ? 'medium' : 'full'}
                       shape='square'
+                      onClick={handleCopy}
                     >
                       Copy
                     </Link>
