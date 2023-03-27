@@ -8,6 +8,7 @@ import {
   Header,
   Link,
   Paragraph,
+  ShortedLinks,
   ShortenBox,
   Statistics,
   Title,
@@ -17,26 +18,9 @@ import { useMediaQuery } from '@hooks';
 import './App.css';
 
 const { theme } = resolveConfig(tailwindConfig);
-const shortedLinks = [
-  {
-    url: 'http://www.frontendmentor.io',
-    shortedUrl: 'https://rel.ink/k4lKyk',
-  },
-  {
-    url: 'http://www.frontendmentor.io',
-    shortedUrl: 'https://rel.ink/k4lKyk',
-  },
-  {
-    url: 'http://www.frontendmentor.io',
-    shortedUrl: 'https://rel.ink/k4lKyk',
-  },
-];
 
 function App(): JSX.Element {
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
-
-  // TODO: feat add copy link
-  const handleCopy = () => console.log('copy');
 
   return (
     <>
@@ -102,31 +86,9 @@ function App(): JSX.Element {
               <div className='absolute inset-x-0 top-0 -translate-y-1/2'>
                 <ShortenBox />
               </div>
-              <ul className='mb-10 lg:mb-32'>
-                {shortedLinks.map(({ url, shortedUrl }) => (
-                  <li key={url} className='mb-6 last:mb-32'>
-                    <div className='bg-neutral-white rounded-md lg:px-6 lg:py-4 lg:flex lg:justify-between items-center text-md tracking-wide lg:text-xl'>
-                      <div className='px-4 pt-4 pb-3 lg:px-0 lg:py-0 border-b border-b-neutral-gray lg:border-b-0'>
-                        <p>{url}</p>
-                      </div>
-                      <div className='p-4 lg:p-0 lg:flex lg:gap-6 lg:items-center'>
-                        <p className='mb-4 lg:mb-0 text-primary-cyan lg:text-right'>
-                          {shortedUrl}
-                        </p>
-                        {/* TODO: change button when copied */}
-                        <Link
-                          variant='primary'
-                          size={isDesktop ? 'medium' : 'full'}
-                          shape='square'
-                          onClick={handleCopy}
-                        >
-                          Copy
-                        </Link>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div className='mb-10 lg:mb-32'>
+                <ShortedLinks />
+              </div>
             </div>
             <Title
               element='h2'

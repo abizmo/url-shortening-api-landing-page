@@ -3,6 +3,7 @@ export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Link } from './Link';
 export { default as Paragraph } from './Paragraph';
+export { default as ShortedLinks } from './ShortedLinks';
 export { default as ShortenBox } from './ShortenBox';
 export { default as Statistics } from './Statistics';
 export { default as Title } from './Title';
