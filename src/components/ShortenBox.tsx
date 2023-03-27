@@ -60,6 +60,7 @@ function ShortenBox() {
         variant='primary'
         size={isDesktop ? 'medium' : 'full'}
         shape='square'
+        submit
       >
         Shorten It!
       </Link>

@@ -30,7 +30,9 @@ interface LinkProps
       AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement>,
       'size' | 'shape'
     >,
-    VariantProps<typeof link> {}
+    VariantProps<typeof link> {
+  submit?: boolean;
+}
 
 function Link({
   variant,
@@ -38,6 +40,7 @@ function Link({
   shape,
   className,
   href,
+  submit = false,
   type,
   ...props
 }: LinkProps): JSX.Element {
@@ -48,9 +51,13 @@ function Link({
         {props.children}
       </a>
     );
+
   return (
-    // TODO: fix type
-    <button type='submit' className={classnames} {...props}>
+    <button
+      type={submit ? 'submit' : 'button'}
+      className={classnames}
+      {...props}
+    >
       {props.children}
     </button>
   );
