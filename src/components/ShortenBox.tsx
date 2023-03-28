@@ -17,7 +17,7 @@ const schema: ZodType<FormData> = z.object({
   link: z.string().url({ message: 'Please add a link' }),
 });
 
-function ShortenBox() {
+function ShortenBox(): JSX.Element {
   const {
     register,
     handleSubmit,
@@ -31,6 +31,7 @@ function ShortenBox() {
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
   const onSubmit = (data: FormData) => console.log(data);
+
   const isValidLink = !!errors.link;
 
   return (

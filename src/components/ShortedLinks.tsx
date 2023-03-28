@@ -7,22 +7,27 @@ import { useMediaQuery } from '@hooks';
 
 const { theme } = resolveConfig(tailwindConfig);
 
-const shortedLinks = [
-  {
-    url: 'http://www.frontendmentor.io',
-    shortedUrl: 'https://rel.ink/k4lKyk',
-  },
-  {
-    url: 'http://www.frontendmentor.io',
-    shortedUrl: 'https://rel.ink/k4lKyk',
-  },
-  {
-    url: 'http://www.frontendmentor.io',
-    shortedUrl: 'https://rel.ink/k4lKyk',
-  },
+type ShortedLink = {
+  url: string;
+  shortedUrl: string;
+};
+
+const shortedLinks: ShortedLink[] = [
+  // {
+  //   url: 'http://www.frontendmentor.io',
+  //   shortedUrl: 'https://rel.ink/k4lKyk',
+  // },
+  // {
+  //   url: 'http://www.frontendmentor.io',
+  //   shortedUrl: 'https://rel.ink/k4lKyk',
+  // },
+  // {
+  //   url: 'http://www.frontendmentor.io',
+  //   shortedUrl: 'https://rel.ink/k4lKyk',
+  // },
 ];
 
-function ShortedLinks() {
+function ShortedLinks(): JSX.Element {
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
   // TODO: feat add copy link
