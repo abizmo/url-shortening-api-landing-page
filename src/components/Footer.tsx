@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import { Attribution } from '@components';
 
 function Footer({ children }: PropsWithChildren): JSX.Element {
   return (
@@ -6,6 +7,7 @@ function Footer({ children }: PropsWithChildren): JSX.Element {
       <div className='container mx-auto px-6 py-14 lg:py-20 grid gap-14 justify-items-center lg:flex lg:justify-between lg:items-start'>
         {children}
       </div>
+      <Attribution name='Abián Izquierdo' url='https://www.abizmo.dev' />
     </footer>
   );
 }

@@ -11,6 +11,7 @@ module.exports = {
       'neutral-grayish-violet': 'hsl(257, 7%, 63%)',
       'neutral-dark-blue': 'hsl(255, 11%, 22%)',
       'neutral-dark-violet': 'hsl(260, 8%, 14%)',
+      transparent: 'transparent',
     },
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
@@ -43,19 +44,22 @@ module.exports = {
       loose: '1.8',
     },
     screens: {
-      lg: '1158px',
+      lg: '1220px',
     },
     extend: {
       backgroundImage: {
         hero: 'url("images/illustration-working.svg")',
         'boost-mobile': 'url("images/bg-boost-mobile.svg")',
         'boost-desktop': 'url("images/bg-boost-desktop.svg")',
+        'shorten-mobile': 'url("images/bg-shorten-mobile.svg")',
+        'shorten-desktop': 'url("images/bg-shorten-desktop.svg")',
       },
       backgroundSize: {
         'hero-size': 'auto 100%',
+        '3/4': '75%',
       },
       gridTemplateColumns: {
-        '2-center': '1fr repeat(2, 579px) 1fr',
+        '2-center': '1fr repeat(2, 610px) 1fr',
       },
       spacing: {
         30: '7.5rem',
