@@ -11,8 +11,8 @@ function ShortedLinks(): JSX.Element {
   const { links } = useLinks();
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
-  // TODO: feat add copy link
-  const handleCopy = () => console.log('copy');
+  const handleCopy = (shortedUrl: string) =>
+    navigator.clipboard.writeText(shortedUrl);
 
   return (
     <ul>
@@ -31,7 +31,7 @@ function ShortedLinks(): JSX.Element {
                 variant='primary'
                 size={isDesktop ? 'medium' : 'full'}
                 shape='square'
-                onClick={handleCopy}
+                onClick={() => handleCopy(shortedUrl)}
               >
                 Copy
               </Link>
