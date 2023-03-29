@@ -4,20 +4,27 @@ import tailwindConfig from 'tailwind-config';
 
 import { Link } from '@components';
 import { useLinks, useMediaQuery } from '@hooks';
+import { useState } from 'react';
+import { ShortedLink } from '@types';
 
 const { theme } = resolveConfig(tailwindConfig);
 
 function ShortedLinks(): JSX.Element {
+  const [copiedLink, setCopiedLink] = useState('');
   const { links } = useLinks();
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
 
-  const handleCopy = (shortedUrl: string) =>
+  const handleCopy = ({ id, shortedUrl }: Omit<ShortedLink, 'url'>) => {
     navigator.clipboard.writeText(shortedUrl);
+    setCopiedLink(id);
+  };
+
+  const isInClipboard = (id: string) => id === copiedLink;
 
   return (
     <ul>
-      {links.map(({ url, shortedUrl }) => (
-        <li key={url} className='mb-6 last:mb-32'>
+      {links.map(({ id, url, shortedUrl }) => (
+        <li key={id} className='mb-6 last:mb-32'>
           <div className='bg-neutral-white rounded-md lg:px-6 lg:py-4 lg:flex lg:justify-between items-center text-md tracking-wide lg:text-xl'>
             <div className='px-4 pt-4 pb-3 lg:px-0 lg:py-0 border-b border-b-neutral-gray lg:border-b-0'>
               <p>{url}</p>
@@ -26,14 +33,14 @@ function ShortedLinks(): JSX.Element {
               <p className='mb-4 lg:mb-0 text-primary-cyan lg:text-right'>
                 {shortedUrl}
               </p>
-              {/* TODO: change button when copied */}
               <Link
                 variant='primary'
                 size={isDesktop ? 'medium' : 'full'}
                 shape='square'
-                onClick={() => handleCopy(shortedUrl)}
+                onClick={() => handleCopy({ id, shortedUrl })}
+                className={isInClipboard(id) ? 'bg-primary-violet' : ''}
               >
-                Copy
+                {isInClipboard(id) ? 'Copied' : 'Copy'}
               </Link>
             </div>
           </div>
