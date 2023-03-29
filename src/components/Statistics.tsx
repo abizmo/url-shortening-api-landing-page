@@ -1,7 +1,6 @@
 import { Paragraph, Title } from '@components';
 import { PropsWithChildren } from 'react';
 
-// TODO: change layout when desktop view
 function Statistics({ children }: PropsWithChildren): JSX.Element {
   return <ul className='grid gap-20 lg:grid-cols-3 lg:gap-8'>{children}</ul>;
 }
@@ -15,7 +14,7 @@ function StatisticsItem({
   title,
   svgIcon,
   children,
-}: PropsWithChildren<StatisticsItemProps>): JSX.Element {
+}: Readonly<PropsWithChildren<StatisticsItemProps>>): JSX.Element {
   return (
     <li className='[&:not(:last-child)]:relative [&:not(:last-child)]:after:w-2 lg:[&:not(:last-child)]:after:w-8  [&:not(:last-child)]:after:h-10 lg:[&:not(:last-child)]:after:h-2  [&:not(:last-child)]:after:bg-primary-cyan [&:not(:last-child)]:after:absolute [&:not(:last-child)]:after:left-1/2 lg:[&:not(:last-child)]:after:left-full [&:not(:last-child)]:after:-translate-x-1/2 lg:[&:not(:last-child)]:after:translate-x-0 lg:[&:not(:last-child)]:after:top-40 lg:[&:nth-child(2)]:pt-10 lg:[&:nth-child(3)]:pt-20'>
       <div className='bg-neutral-white px-11 rounded-md relative'>
