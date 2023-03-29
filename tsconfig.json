@@ -19,8 +19,10 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components": ["src/components"],
+      "@context": ["src/context"],
       "@hooks": ["src/hooks"],
-      "@pages": ["src/pages"]
+      "@pages": ["src/pages"],
+      "@types": ["src/types"]
     }
   },
   "include": ["src"],

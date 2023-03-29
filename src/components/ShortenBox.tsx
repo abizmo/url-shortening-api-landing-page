@@ -5,7 +5,7 @@ import tailwindConfig from 'tailwind-config';
 import { z, ZodType } from 'zod';
 
 import { Link } from '@components';
-import { useMediaQuery } from '@hooks';
+import { useLinks, useMediaQuery } from '@hooks';
 
 const { theme } = resolveConfig(tailwindConfig);
 
@@ -29,8 +29,10 @@ function ShortenBox(): JSX.Element {
     resolver: zodResolver(schema),
   });
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
+  const { addLinks } = useLinks();
 
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = (data: FormData) =>
+    addLinks({ url: data.link, shortedUrl: data.link });
 
   const isValidLink = !!errors.link;
 
