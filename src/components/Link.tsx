@@ -5,7 +5,7 @@ const link = cva('block text-center font-bold', {
   variants: {
     variant: {
       text: 'lg:hover:text-neutral-dark-violet',
-      primary: 'bg-primary-cyan text-neutral-white lg:hover:bg-opacity-70',
+      primary: 'bg-primary-cyan text-neutral-white lg:hover:brightness-110',
     },
     size: {
       small: 'w-fit py-3 px-6',

@@ -33,8 +33,6 @@ interface TitleProps
   extends Omit<AllHTMLAttributes<HTMLHeadingElement>, 'color'>,
     VariantProps<typeof heading> {}
 
-// TODO: make variants
-
 function Title({
   element,
   align,

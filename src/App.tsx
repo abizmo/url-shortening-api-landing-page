@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import { LinksProvider } from '@context';
 import { Layout } from '@components';
 import { Home } from '@pages';
 
@@ -6,9 +6,11 @@ import './App.css';
 
 function App(): JSX.Element {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <LinksProvider>
+      <Layout>
+        <Home />
+      </Layout>
+    </LinksProvider>
   );
 }
 
