@@ -37,7 +37,8 @@ function ShortenBox(): JSX.Element {
           url: result.original_link,
         }),
       )
-      .catch((err) => console.error(err));
+      // eslint-disable-next-line no-alert
+      .catch((err) => alert(err));
   };
 
   const isValidLink = !!errors.url;
