@@ -18,7 +18,12 @@ type Context = {
 export const LinksContext = createContext<Context | null>(null);
 
 function LinksProvider({ children }: PropsWithChildren) {
-  const [links, setLinks] = useState<ShortedLink[]>(initialState);
+  const [links, setLinks] = useState<ShortedLink[]>(() => {
+    const linksInLocalStorage = localStorage.getItem('links');
+    console.log(linksInLocalStorage);
+    if (linksInLocalStorage) return JSON.parse(linksInLocalStorage);
+    return initialState;
+  });
   const value = useMemo(() => ({ links, setLinks }), [links]);
 
   return (

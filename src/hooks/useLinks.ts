@@ -11,7 +11,12 @@ function useLinks() {
 
   const { links, setLinks } = context;
 
-  const addLinks = (newLink: ShortedLink) => setLinks([...links, newLink]);
+  const addLinks = (newLink: ShortedLink) => {
+    setLinks((prevLinks) => {
+      localStorage.setItem('links', JSON.stringify([...prevLinks, newLink]));
+      return [...prevLinks, newLink];
+    });
+  };
 
   return {
     links,
