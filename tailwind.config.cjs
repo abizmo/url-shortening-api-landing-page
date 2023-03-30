@@ -48,11 +48,11 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero: 'url("./images/illustration-working.svg")',
-        'boost-mobile': 'url("./images/bg-boost-mobile.svg")',
-        'boost-desktop': 'url("./images/bg-boost-desktop.svg")',
-        'shorten-mobile': 'url("./images/bg-shorten-mobile.svg")',
-        'shorten-desktop': 'url("./images/bg-shorten-desktop.svg")',
+        hero: 'url("/images/illustration-working.svg")',
+        'boost-mobile': 'url("/images/bg-boost-mobile.svg")',
+        'boost-desktop': 'url("/images/bg-boost-desktop.svg")',
+        'shorten-mobile': 'url("/images/bg-shorten-mobile.svg")',
+        'shorten-desktop': 'url("/images/bg-shorten-desktop.svg")',
       },
       backgroundSize: {
         'hero-size': 'auto 100%',
