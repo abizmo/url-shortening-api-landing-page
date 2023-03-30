@@ -11,8 +11,7 @@ function useLinks() {
 
   const { links, setLinks } = context;
 
-  const addLinks = (newLink: Omit<ShortedLink, 'id'>) =>
-    setLinks([...links, { ...newLink, id: new Date().toISOString() }]);
+  const addLinks = (newLink: ShortedLink) => setLinks([...links, newLink]);
 
   return {
     links,

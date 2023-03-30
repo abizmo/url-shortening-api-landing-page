@@ -6,15 +6,12 @@ import { z, ZodType } from 'zod';
 
 import { Link } from '@components';
 import { useLinks, useMediaQuery } from '@hooks';
+import { createShortLink, FormData } from '@services';
 
 const { theme } = resolveConfig(tailwindConfig);
 
-type FormData = {
-  link: string;
-};
-
 const schema: ZodType<FormData> = z.object({
-  link: z.string().url({ message: 'Please add a link' }),
+  url: z.string().url({ message: 'Please add a link' }),
 });
 
 function ShortenBox(): JSX.Element {
@@ -24,17 +21,26 @@ function ShortenBox(): JSX.Element {
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
-      link: '',
+      url: '',
     },
     resolver: zodResolver(schema),
   });
   const isDesktop = useMediaQuery(`(min-width: ${theme.screens.lg}`);
   const { addLinks } = useLinks();
 
-  const onSubmit = (data: FormData) =>
-    addLinks({ url: data.link, shortedUrl: data.link });
+  const onSubmit = (data: FormData) => {
+    createShortLink(data)
+      .then((result) =>
+        addLinks({
+          id: result.code,
+          shortedUrl: result.full_short_link,
+          url: result.original_link,
+        }),
+      )
+      .catch((err) => console.error(err));
+  };
 
-  const isValidLink = !!errors.link;
+  const isValidLink = !!errors.url;
 
   return (
     <form
@@ -50,11 +56,11 @@ function ShortenBox(): JSX.Element {
               ? 'border-secondary-red placeholder-secondary-red placeholder-opacity-70 text-secondary-red'
               : 'border-transparent placeholder-neutral-grayish-violet'
           } border-4 rounded p-4 text-md tracking-wide w-full outline-none`}
-          {...register('link')}
+          {...register('url')}
         />
         {isValidLink && (
           <p className='absolute bottom-3 lg:top-full lg:translate-y-2 italic text-secondary-red'>
-            {errors.link?.message}
+            {errors.url?.message}
           </p>
         )}
       </div>
