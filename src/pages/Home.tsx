@@ -74,7 +74,6 @@ function Home(): JSX.Element {
         >
           Boost your links today
         </Title>
-        {/* TODO: fix button hover when it's over dark bg */}
         <Link
           href='/sign-up'
           variant='primary'
